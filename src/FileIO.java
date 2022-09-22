@@ -1,6 +1,6 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class FileIO {
 
@@ -18,6 +18,17 @@ public class FileIO {
             }
 
             writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+            String line;
+            while ((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
